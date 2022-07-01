@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --color-primary: #454546;
+    --color-secondary: #666666;
+    --color-tertiary: #8c8c8c;
+    --color-complementary-1: #e8c39e;
+    --color-complementary-2: #f5e1c8;
+
+    --color-font-1: #060102;
+    --color-font-2: #362d2e;
+    --color-font-3: #5e5b60;
+    --color-font-4: #e4e3e1;
+    --color-font-5: #a77243;
+
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.hero {
+    background: var(--color-secondary);
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero__img__header {
+    width: 90px;
+    float: left;
+    margin-top: 10px;
+}
+
+.navbar .hero__menu {
+    float: right;
+    line-height: 70px;
+}
+
+.navbar .hero__menu a {
+    display: inline-block;
+    padding: 15px 10px;
+    line-height: normal;
+    text-decoration: none;
+    color: var(--color-font-4);
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+}
+
+.navbar .hero__menu a:hover {
+    color: var(--color-font-5);
+    border-bottom: 2px solid var(--color-font-5);
+    padding: 5px 10px;
+}
+
+.hero__img {
+    width: 100%;
+    height: 600px;
+}
+
+.hero__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Section Profile */
+
+.profile div {
+    position: absolute;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    width: 320px;
+    height: 450px;
+    background-color: var(--color-tertiary);
+    opacity: 0.7;
+    z-index: 10;
+    top: 100px;
+}
+
+.circle {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    border: solid 15px var(--color-primary);
+    z-index: 21;
+    top: 140px;
+}
+
+.profile__img{
+    top: 154px;
+    z-index: 20;
+}
+
+.profile__img img{
+    width: 202px;
+    height: 202px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.square__text{
+    font-size: 1.2rem;
+    color: var(--color-font-4);
+    top: 380px;
+    z-index: 11;
+}
+
+.square__text__2{
+    font-size: 1.1rem;
+    color: var(--color-complementary-1);
+    top: 418px;
+    z-index: 12;
+}
+
+.square__text__3{
+    font-size: .9rem;
+    color: var(--color-font-1);
+    top: 500px;
+    z-index: 13;
+}
+
+.square__text__3 a{
+    color: var(--color-font-2);
+    text-decoration: none;
+}
+
+.contact__icon{
+ top: 450px;
+ z-index: 11;
+}
+
+.contact__icon i{
+    font-size: 1.8rem;
+    color: var(--color-font-3);
+    margin: 0 10px;
+}
+
+.contact__icon i:hover{
+    color: var(--color-font-4);
+    transform: scale(1.3);
+    transition: .3s;
+}
