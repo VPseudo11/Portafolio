@@ -1,0 +1,22 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "primer portafolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VPseudo11/Portafolio.git"
+  },
+  "author": "Pseudo Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VPseudo11/Portafolio/issues"
+  },
+  "homepage": "https://github.com/VPseudo11/Portafolio#readme",
+  "dependencies": {
+    "eins-modal": "^2.2.2"
+  }
+}

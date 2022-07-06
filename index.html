@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo - Dev</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1f1c372ee3.js" crossorigin="anonymous"></script>
     <link rel="icon" href="/assets/img/PseudoDeveloper.ico">
+    <link rel="stylesheet" href="/node_modules/eins-modal/dist/css/eins-modal.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -66,20 +67,21 @@
         <div class="briefcase__section container">
             <h2><span>Briefcase </span> Portafolio</h2>
             <div class="briefcase__grid">
-                <div class="project"><img src="/assets/img/img-briefcase/RPG-game.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="weather__App__container project">
-                    <div class="weather__App"><img src="/assets/img/img-briefcase/Lluvioso.jpg" alt=""></div>
-                    <div class="weather__App"><img src="/assets/img/img-briefcase/Soleado.jpg" alt=""></div>
-                    <div class="weather__App"><img src="/assets/img/img-briefcase/Nublado.jpg" alt=""></div>
-                    <div class="weather__App"><img src="/assets/img/img-briefcase/Ventoso.jpg" alt=""></div>
+                <div class="project">
+                    <a data-modal-id="pw__RPG_game">
+                        <img src="/assets/img/img-briefcase/RPG-game.jpg" alt="">
+                    </a>
                 </div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
-                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
+                <div class="project">
+                    <a data-modal-id="myModal">
+                        <img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></a>
+                </div>
+                <div class="project">
+                    <a data-modal-id="myModal">
+                        <img src="/assets/img/img-briefcase/Nubes.jpg" alt="">
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -167,6 +169,57 @@
         <div class="container"></div>
         <p>&#169 2022 Copyright | Designed by Pseudo Dev</p>
     </footer>
+
+    <!-- NPM -- Eins Modal -->
+    <!-- template -->
+
+    <div id="myModal" class="eins-modal" data-options="openTransitions: expandIn;
+    openDuration: 200">
+        <div class="eins-modal-content">
+            <div class="eins-modal-close"></div>
+            TestModal
+            <button class="eins-modal-close-button"> ok </button>
+        </div>
+    </div>
+
+    <!-- Start Eins Nodal -->
+
+    <div id="pw__RPG_game" class="eins-modal" data-options="openTransitions: expandIn;
+    openDuration: 200">
+        <div class="eins-modal-content">
+            <div class="eins-modal-close"></div>
+
+            <div class="pw__content">
+                <div class="eins-modal-preview">
+                    <img src="/assets/img/img-briefcase/PseudoAdventure.png" alt="">
+                </div>
+                <div class="eins-modal-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis dolorum amet expedita, sint saepe
+                        nisi. Ut amet enim praesentium sed cumque eveniet cupiditate laudantium perferendis nulla,
+                        deserunt odit doloribus id?</p>
+
+                    <div class="eins-modal-text-2">
+                        <span>Link</span><a href="#">PseudoAdventure.com</a>
+                    </div>
+                    <div class="eins-modal-text-3">
+                        <span>Used Technologies</span>
+                        <div class="eins-modal-tech">
+                            <img src="/assets/img/img-skills-habilities/html-5.png" alt="">
+                            <img src="/assets/img/img-skills-habilities/css-3.png" alt="">
+                            <img src="/assets/img/img-skills-habilities/js.png" alt="">
+                            <img src="/assets/img/img-skills-habilities/unity.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <script src="/node_modules/eins-modal/dist/js/eins-modal.min.js"></script>
 </body>
 
 </html>
