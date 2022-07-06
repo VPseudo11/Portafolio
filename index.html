@@ -16,17 +16,17 @@
 
 <body>
     <header>
-        <div class="hero">
+        <div class="hero" id="home">
             <div class="navbar">
                 <div class="hero__img__header">
                     <img src="/assets/img/PseudoDeveloper.png" alt="">
                 </div>
                 <nav class="hero__menu">
-                    <a href="#">Home</a>
-                    <a href="#">About me</a>
-                    <a href="#">Briefcase</a>
-                    <a href="#">My Abilities</a>
-                    <a href="#">Contact</a>
+                    <a href="#home">Home</a>
+                    <a href="#about_me">About me</a>
+                    <a href="#briefcase">Briefcase</a>
+                    <a href="#skills">My Abilities</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </div>
         </div>
@@ -35,13 +35,15 @@
         </div>
 
         <div class="profile">
-            <div class="square"></div>
+            <div class="square">
+                <div class="square2"></div>
+            </div>
             <div class="circle"></div>
             <div class="profile__img">
                 <img src="/assets/img/profile.jpg" alt="">
             </div>
             <div class="square__text">
-                <h2>Pseudo Developer</h2>
+                <h2>Diego Javier Calva</h2>
             </div>
             <div class="square__text__2">
                 <h3><span>Full Stack Web</span></h3>
@@ -76,11 +78,13 @@
                 <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
                 <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
                 <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
+                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
+                <div class="project"><img src="/assets/img/img-briefcase/e-Comerce.jpg" alt=""></div>
             </div>
         </div>
     </section>
 
-    <section class="skills">
+    <section class="skills" id="skills">
         <div class="skill container">
             <div class="knowledge__part">
                 <h2><span>knowledge</span> Conocimientos</h2>
@@ -95,11 +99,11 @@
                     </div>
                     <div>
                         <img src="/assets/img/img-skills-habilities/js.png" alt="">
-                        <h3>JS</h3>
+                        <h3>JavaScript</h3>
                     </div>
                     <div>
                         <img src="/assets/img/img-skills-habilities/typescript.png" alt="">
-                        <h3>TS</h3>
+                        <h3>TypeScript</h3>
                     </div>
                     <div>
                         <img src="/assets/img/img-skills-habilities/node-js.png" alt="">
@@ -125,14 +129,14 @@
                     </div>
                     <div>
                         <img src="/assets/img/img-skills-habilities/photoshop.png" alt="">
-                        <h3>PS</h3>
+                        <h3>Photoshop</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about_me">
         <div class="about__flex container">
             <div class="about__info">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique facilis ipsam, nobis voluptate
@@ -142,11 +146,19 @@
                     incidunt exercitationem repellat adipisci obcaecati? Iure corrupti ex eveniet quisquam consectetur
                     facere fugit eius atque earum.</p>
             </div>
-            <div class="social">
+            <div class="social" id="contact">
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-solid fa-file-contract"></i></a>
                 <a href="#"><i class="fa-solid fa-message"></i></a>
+            </div>
+        </div>
+        <div class="code__repo">
+            <div>
+                <a href="https://github.com/VPseudo11/Portafolio.git" target="blank">
+                    <img src="/assets/img/img-skills-habilities/github.png" alt="">
+                    <span>/ view code from this repository /</span>
+                </a>
             </div>
         </div>
     </section>

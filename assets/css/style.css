@@ -15,10 +15,15 @@
     --color-font-1: #060102;
     --color-font-2: #362d2e;
     --color-font-3: #5e5b60;
-    --color-font-4: #e4e3e1;
+    --color-font-4: #ffffff;
     --color-font-5: #a77243;
 
 }
+
+body {
+    background-color: var(--color-tertiary);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -30,7 +35,7 @@ img {
 }
 
 .hero {
-    background: var(--color-secondary);
+    background: var(--color-primary);
     width: 100%;
     height: 80px;
     position: relative;
@@ -65,14 +70,14 @@ img {
 }
 
 .navbar .hero__menu a:hover {
-    color: var(--color-font-5);
-    border-bottom: 2px solid var(--color-font-5);
+    color: var(--color-complementary-1);
+    border-bottom: 2px solid var(--color-complementary-1);
     padding: 5px 10px;
 }
 
 .hero__img {
     width: 100%;
-    height: 600px;
+    height: 90vh;
 }
 
 .hero__img img {
@@ -99,17 +104,38 @@ span {
 .square {
     width: 320px;
     height: 450px;
-    background-color: var(--color-tertiary);
+    /* background-color: var(--color-tertiary); */
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 20px;
+    transition: all .3s;
     opacity: 0.3;
     z-index: 10;
     top: 100px;
+}
+
+.square2 {
+    width: 320px;
+    height: 450px;
+    background-color: var(--color-tertiary);
+    border-radius: none;
+    transition: all .2s;
+    z-index: 10;
+}
+
+.square2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+
+.square:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }
 
 .circle {
     width: 230px;
     height: 230px;
     border-radius: 50%;
-    border: solid 15px var(--color-primary);
+    border: solid 12px var(--color-primary);
     z-index: 21;
     top: 140px;
 }
@@ -177,7 +203,7 @@ span {
 
 .briefcase {
     /* background-color: var(--color-tertiary); */
-    background: linear-gradient(-35deg, #424242, #837a7a);
+    background: linear-gradient(225deg, #4F5358, #C5C7C7);
     padding-bottom: 110px;
 }
 
@@ -214,9 +240,13 @@ span {
 
 /* Skills */
 
-section.skills {
-   /*  background-color: var(--color-primary); */
-    background: linear-gradient(45deg, #454546, #8c8c8c);
+.skills {
+    /*  background-color: var(--color-primary); */
+    /* background: linear-gradient(45deg, #454546, #8c8c8c); */
+    /* background-color: var(--color-secondary); */
+    background-image: url('/assets/img/Shiny\ Overlay.png');
+    background-size: cover;
+    /*     height: 100vh; */
 }
 
 .skill {
@@ -259,7 +289,7 @@ section.skills {
     padding: 5px 0;
     font-size: 1.1rem;
     width: 100px;
-    color: var(--color-complementary-1);
+    color: var(--color-font-4);
     opacity: 0;
     transform: translate(0px, -100px);
     transition: transform .4s ease, opacity .4s ease;
@@ -274,14 +304,17 @@ section.skills {
 /* about */
 
 .about {
-    background-color: var(--color-secondary);
+    /* background-color: var(--color-secondary); */
+    background-image: url('/assets/img/Polygon\ Luminary.png');
+    background-size: cover;
+    /* height: 90vh; */
 }
 
 .about__flex {
     display: flex;
     width: 90%;
     margin: 0 auto;
-    padding: 60px 0 150px;
+    padding: 60px 0 100px;
 }
 
 .about p {
@@ -293,7 +326,7 @@ section.skills {
 }
 
 .social {
-    border-left: var(--color-font-2) 3px solid; 
+    border-left: var(--color-font-1) 3px solid;
     padding: 0 50px;
 }
 
@@ -303,7 +336,7 @@ section.skills {
     margin: 10px 10px;
 }
 
-.social i:hover{
+.social i:hover {
     transform: scale(1.2)
 }
 
@@ -311,4 +344,33 @@ footer {
     background-color: var(--color-primary);
     text-align: center;
     color: var(--color-complementary-2);
+    padding: 30px 0;
+}
+
+/* Code repository */
+
+.code__repo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.code__repo a {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+}
+
+.code__repo img {
+    width: 30px;
+}
+
+.code__repo img:hover {
+    transform: scale(1.2);
+}
+
+.code__repo span:hover {
+    color: var(--color-font-4);
 }
