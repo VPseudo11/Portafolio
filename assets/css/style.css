@@ -34,32 +34,35 @@ img {
     max-height: 100%;
 }
 
-.hero {
+.header {
     background: var(--color-primary);
     width: 100%;
     height: 80px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
 }
 
 .navbar {
     width: 90%;
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero__img__header {
     width: 90px;
-    float: left;
     margin-top: 10px;
 }
 
-.navbar .hero__menu {
-    float: right;
-    line-height: 70px;
+.hero__menu {
+    margin-top: 10px;
+    display: flex;
 }
 
-.navbar .hero__menu a {
-    display: inline-block;
+.hero__menu a {
     padding: 15px 10px;
     line-height: normal;
     text-decoration: none;
@@ -69,15 +72,31 @@ img {
     font-size: 15px;
 }
 
-.navbar .hero__menu a:hover {
+
+.hero__menu a:hover {
     color: var(--color-complementary-1);
     border-bottom: 2px solid var(--color-complementary-1);
     padding: 5px 10px;
 }
 
+.nav-toggle {
+    font-size: 32px;
+    color: var(--color-font-4);
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.section2 {
+    width: 100%;
+    height: 100vh;
+}
+
 .hero__img {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
 }
 
 .hero__img img {
@@ -89,6 +108,7 @@ img {
 span {
     color: var(--color-complementary-1);
 }
+
 
 /* Section Profile */
 
@@ -105,7 +125,7 @@ span {
     width: 320px;
     height: 450px;
     /* background-color: var(--color-tertiary); */
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    background-image: linear-gradient(163deg, #c8c8c7 0%, #8d9295 100%);
     border-radius: 20px;
     transition: all .3s;
     opacity: 0.3;
@@ -120,15 +140,6 @@ span {
     border-radius: none;
     transition: all .2s;
     z-index: 10;
-}
-
-.square2:hover {
-    transform: scale(0.98);
-    border-radius: 20px;
-}
-
-.square:hover {
-    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }
 
 .circle {
@@ -166,18 +177,6 @@ span {
     z-index: 12;
 }
 
-.square__text__3 {
-    font-size: .9rem;
-    color: var(--color-font-1);
-    top: 500px;
-    z-index: 13;
-}
-
-.square__text__3 a {
-    color: var(--color-font-2);
-    text-decoration: none;
-}
-
 .contact__icon {
     top: 450px;
     z-index: 11;
@@ -195,51 +194,153 @@ span {
     transition: .3s;
 }
 
-.square__text__3:hover {
-    border-bottom: 2px solid var(--color-complementary-1);
+.square2:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+
+.square:hover {
+    box-shadow: 0px 0px 30px 1px rgba(197, 199, 196, 1);
 }
 
 /* Briefcase */
 
 .briefcase {
-    /* background-color: var(--color-tertiary); */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(225deg, #4F5358, #C5C7C7);
-    padding-bottom: 110px;
 }
 
-.briefcase__section h2 {
-    padding: 40px;
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+}
+
+.slide-container h2 {
     text-align: center;
+    padding-bottom: 50px;
 }
 
-.briefcase__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
-    gap: 15px;
-    width: 80%;
-    margin: 0 auto;
+.slide-content {
+    margin: 0 40px;
+    overflow: hidden;
+    padding: 45px 0;
 }
 
-.briefcase__grid img {
+.card-image {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.212);
+    background: #fff;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    position: relative;
+    transition: all .4s;
+    margin: auto auto;
+}
+
+.card-image::before {
+    letter-spacing: 0.2em;
+    position: absolute;
+    bottom: 8px;
+    left: 120px;
+    color: var(--color-font-1);
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.card1::before {
+    content: 'RPG Game';
+}
+
+.card2::before {
+    content: 'e-Comerce';
+}
+
+.card3::before {
+    content: 'Weather App';
+}
+
+.card-image div {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+    cursor: pointer;
+    z-index: 10;
+    transition: all .4s;
+    background-color: #fff;
+    margin: auto auto;
+}
+
+.card-image:hover div {
+    transform: translateY(-30px);
+}
+
+.card-image .card-img {
+    height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.2s ease;
 }
 
-.briefcase__grid .project:hover {
+.card-image:hover {
     transform: scale(1.1);
+}
+
+.swiper-navBtn {
+    color: var(--color-secondary);
+    transition: color .3s ease;
+}
+
+.swiper-navBtn:hover {
+    color: var(--color-primary);
+}
+
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 40px;
+}
+
+.swiper-button-next {
+    padding-top: 45px;
+    right: 0;
+}
+
+.swiper-button-prev {
+    padding-top: 45px;
+    left: 0;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--color-secondary);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--color-primary);
+}
+
+@media screen and(max-width: 768px) {
+    .slide-content {
+        margin: 0 10px
+    }
+
+    .swiper-navBtn {
+        display: none;
+    }
 }
 
 /* Skills */
 
 .skills {
-    /*  background-color: var(--color-primary); */
-    /* background: linear-gradient(45deg, #454546, #8c8c8c); */
-    /* background-color: var(--color-secondary); */
     background-image: url('/assets/img/Shiny\ Overlay.png');
     background-size: cover;
-    /*     height: 100vh; */
+    padding-top: 100px;
 }
 
 .skill {
@@ -305,32 +406,17 @@ span {
 
 .about__flex {
     display: flex;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    padding: 60px 0 100px;
+    padding: 60px 50px 100px;
 }
 
 .about p {
     font-size: 1.2rem;
     width: 90%;
     margin: 0 auto;
-    line-height: 2.1rem;
-    color: var(--color-font-4);
-}
-
-.social {
-    border-left: var(--color-font-1) 3px solid;
-    padding: 0 50px;
-}
-
-.social i {
-    font-size: 2.1rem;
-    color: var(--color-tertiary);
-    margin: 10px 10px;
-}
-
-.social i:hover {
-    transform: scale(1.2)
+    line-height: 1.8rem;
+    color: var(--color-font-1);
 }
 
 footer {
@@ -371,29 +457,56 @@ footer {
 /* modals */
 
 .eins-modal-content {
-    min-width: 700px;
-    background-image: url('/assets/img/backgrounds/Arcade.gif');
-    background-size: 50%;
-    background-repeat: no-repeat;
-    background-position: 350px;
+    max-width: 700px;
+}
+
+#pw__RPG_game .eins-modal-content {
     background-color: #1c1b2b;
 }
 
+#pw__E__comerce .eins-modal-content {
+    background-color: #3da7fe;
+}
+
+#pw__App__Clima .eins-modal-content {
+    background-color: #1e252b;
+}
+
 .eins-modal-preview {
-    width: 330px;
-    height: 186px;
+    max-width: 350px;
+    width: 90%;
     margin: auto auto;
 }
 
 .eins-modal-preview img {
     width: 100%;
-    height: 100%;
     padding: 0 50px 20px 0;
 }
 
-.pw__content {
+
+.pw-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 350px;
+    object-fit: cover;
+}
+
+#pw__RPG_game .pw-content {
+    background-image: url('/assets/img/backgrounds/Arcade.gif');
+}
+
+#pw__E__comerce .pw-content {
+    background-image: url('/assets/img/backgrounds/ecommerce.gif');
+}
+
+#pw__App__Clima .pw-content {
+    background-image: url('/assets/img/backgrounds/clima2.gif');
+}
+
+.eins-modal-text {
+    margin: auto auto;
 }
 
 .eins-modal-text p {
@@ -405,6 +518,10 @@ footer {
     padding: 80px 0 10px;
 }
 
+.eins-modal-text-2 img {
+    width: 30px;
+}
+
 .eins-modal-text-2 a {
     color: #69e0d9;
     margin: 5px;
@@ -412,4 +529,165 @@ footer {
 
 .eins-modal-tech img {
     width: 30px;
+}
+
+/* formStyles */
+form {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+label {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* From uiverse.io by @alexruix */
+.input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .4rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus,
+input:hover,
+textarea:hover {
+    outline: none;
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #7a9cc6;
+}
+
+.input::placeholder {
+    color: #777;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+/* From uiverse.io by @adamgiebl */
+.button {
+    width: 110px;
+    font-family: inherit;
+    font-size: 20px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.button span {
+    color: white;
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.button:hover span {
+    transform: translateX(5em);
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 60px;
+    }
+
+    .hero__img__header {
+        margin-top: 0px;
+    }
+
+
+    .hero__menu {
+        margin: auto 0;
+    }
+
+    .hero__menu {
+        flex-direction: column;
+        margin-right: 30px;
+        background-color: var(--color-tertiary);
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 100%;
+        align-items: center;
+        padding: 10px 0;
+        opacity: .8;
+        height: calc(100% - 60px);
+        overflow-y: auto;
+        left: 100%;
+        transition: left .6s;
+    }
+
+    .hero__menu a {
+        color: var(--color-font-1);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .hero__menu__visible {
+        left: 0;
+    }
+
+}
+
+@media (max-width: 654px) {
+    #pw__RPG_game .pw-content {
+        background-image: none;
+    }
+
+    #pw__E__comerce .pw-content {
+        background-image: none;
+    }
+
+    #pw__App__Clima .pw-content {
+        background-image: none;
+    }
 }
