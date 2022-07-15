@@ -152,6 +152,7 @@ span {
 }
 
 .profile__img {
+    background: white;
     top: 154px;
     z-index: 20;
 }
